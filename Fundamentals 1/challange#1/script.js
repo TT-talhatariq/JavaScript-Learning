@@ -25,6 +25,7 @@ johnHeight = 1.76;
 markBMI = markWeight / (markHeight**2);
 johnBMI = johnWeight / (johnHeight**2);
 
+ 
 // Test Case 1
 console.log("Mark BMI: ", markBMI);
 console.log("John BMI: ", johnBMI);
