@@ -96,3 +96,38 @@ add(...badNewArr);
 const check = 0 ?? 10;
 
 console.log(check);
+
+// for (const item of restaurant.categories) console.log(item);
+
+// //Optional Chaining
+// console.log(restaurant.openingHours.mon?.open);
+
+// //Exp
+// const days = ["mon", "tue", "sat", "fri"];
+// for (const day of days) {
+//   console.log(day);
+//   const opn = restaurant.openingHours[day]?.open;
+//   console.log(opn);
+// }
+
+//Lopping over object
+// for (const day of Object.values(openingHours)) console.log(day);
+
+//Sets
+const goal = new Set([1, 2, 4, 5, 2, 1, 2, 1]);
+console.log(goal);
+//.has
+//.add, .delete
+
+//Maps, Key value Pairs
+const map = new Map();
+map.set("1", "Talha");
+//console.log(map);
+
+//Strings
+let a = "ok";
+a.replaceAll("o", "y");
+console.log(a);
+
+const flights =
+  "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
