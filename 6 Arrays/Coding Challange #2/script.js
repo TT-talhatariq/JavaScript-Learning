@@ -74,7 +74,6 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-//Display Movements of Amounts
 const displayMovements = function (movements) {
   containerMovements.innerHTML = '';
   movements.forEach(function (mov, i) {
@@ -89,28 +88,37 @@ const displayMovements = function (movements) {
     containerMovements.insertAdjacentHTML('afterbegin', html);
   });
 };
-
 displayMovements(account1.movements);
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+/////////////////////////////////////////////////
+const dogsJulia = [3, 5, 2, 12, 7];
+const dogsJate = [4, 1, 15, 8, 3];
+const checkDogs = function (dogsJulia, dogsJate) {
+  const correct = dogsJulia.slice(-2);
+  console.log(correct);
 
-//User Names Creation Functions
-const createUsernames = function (accs) {
-  accs.forEach(function (acc) {
-    acc.username = acc.owner
-      .toLowerCase()
-      .split(' ')
-      .map(name => name[0])
-      .join('');
+  const newArr = [...correct, ...dogsJate];
+
+  newArr.forEach(function (dog, i) {
+    const output =
+      dog > 2
+        ? `Dog Number ${i} is an adult, and ${dog} years old`
+        : `Dog Number ${i} is still a puppy 🐶`;
+
+    console.log(output);
   });
 };
-createUsernames(accounts);
+checkDogs(dogsJulia, dogsJate);
 
-//Calculate Balanace
-const canclBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} EUR`;
+//Challange 2
+const calcAverageHumanAge = function (ages) {
+  const humanAges = ages.map(age => (age <= 2 ? age * 2 : age * 4 + 16));
+  console.log(humanAges);
+  const adults = humanAges.filter(age => age >= 18);
+  console.log(adults);
+
+  const average = adults.reduce((acc, age) => acc + age / adults.length, 0);
+  console.log(average);
 };
-// console.log(createUsernames(accounts));
-// console.log(account1);
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-canclBalance(account1.movements);
+calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
