@@ -172,6 +172,7 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = '';
     inputLoginPin.blur();
     updateUI(currentAccount);
+    startLogOutTimer();
   } else {
     labelWelcome.textContent = `Invalid Credentials ⚠`;
   }
@@ -263,9 +264,6 @@ labelBalance.addEventListener('click', function () {
   );
   console.log(movementsUI);
 });
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 100;
 
 //Date
 const now = new Date();
@@ -277,3 +275,25 @@ const min = now.getMinutes();
 
 // Day / Month / Year
 labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;
+
+const startLogOutTimer = function () {
+  //set Time
+  let tm = 100;
+  //call timer
+  const timer = setInterval(function () {
+    //each call print to UI
+    const min = String(Math.trunc(tm / 60)).padStart(2, 0);
+    const sec = String(Math.trunc(tm % 60)).padStart(2, 0);
+
+    labelTimer.textContent = `${min}:${sec}`;
+    tm--;
+
+    if (tm === 0) {
+      clearInterval(timer);
+      containerApp.style.opacity = 0;
+      labelWelcome.textContent = 'Login to get started';
+    }
+  }, 1000);
+
+  //when 0 second, logout
+};
