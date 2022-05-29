@@ -50,3 +50,57 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
     document.querySelector(id).scrollIntoView({ behaviour: 'smooth' });
   }
 });
+
+//Tab Component
+const tabs = document.querySelectorAll('.operations__tab');
+
+const tabsContainer = document.querySelector('.operations__tab-container');
+
+const tabsConent = document.querySelectorAll('.operations__content');
+
+console.log(tabsContainer);
+tabsContainer.addEventListener('click', function (e) {
+  const clicked = e.target.closest('.operations__tab');
+
+  //guard
+  if (!clicked) return;
+
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  clicked.classList.add('operations__tab--active');
+  //Activate content area
+
+  tabsConent.forEach(c => c.classList.remove('operations__content--active'));
+
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add('operations__content--active');
+});
+
+const HandleHover = function (e, opacity) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(e1 => {
+      if (e1 != link) {
+        e1.style.opacity = opacity;
+      }
+    });
+    logo.style.opacity = opacity;
+  }
+};
+//Menu Fade
+const nav = document.querySelector('.nav');
+nav.addEventListener('mouseover', function (e) {
+  HandleHover(e, 0.5);
+});
+nav.addEventListener('mouseout', function (e) {
+  HandleHover(e, 1);
+});
+
+const initialCoords = section1.getBoundingClientRect();
+window.addEventListener('scroll', function (e) {
+  if (this.window.scrollY > initialCoords.top) nav.classList.add('sticky');
+  else nav.classList.remove('sticky');
+});
