@@ -25,13 +25,32 @@
       crossorigin=""
     ></script>
 
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script defer src="script.js"></script>
-    <title>mapty // Map your workouts</title>
+    <title>Mapty</title>
   </head>
   <body>
     <div class="sidebar">
       <img src="logo.png" alt="Logo" class="logo" />
-
+      <div class="opr">
+        <div id="sort">
+          <select name="sort" id="option">
+            <option value="" disabled selected>Sort By:</option>
+            <option value="type">Type</option>
+            <option value="time">Duration</option>
+            <option value="distace">Distance</option>
+          </select>
+        </div>
+        <button class="delete">
+          <i class="fa-solid fa-trash-can fa-2x"></i>
+        </button>
+      </div>
       <ul class="workouts">
         <form class="form hidden">
           <div class="form__row">
