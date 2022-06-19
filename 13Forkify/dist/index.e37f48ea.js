@@ -142,11 +142,11 @@
       this[globalName] = mainExports;
     }
   }
-})({"lqsko":[function(require,module,exports) {
+})({"2kSJi":[function(require,module,exports) {
 "use strict";
 var global = arguments[3];
 var HMR_HOST = null;
-var HMR_PORT = 1234;
+var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
 module.bundle.HMR_BUNDLE_ID = "d113fd8ce37f48ea";
@@ -554,6 +554,10 @@ const controlPagination = function(goToPage) {
     (0, _resultViewJsDefault.default).render(_modelJs.getSearchResultsPage(goToPage));
     //Render pagination
     (0, _paginationJsDefault.default).render(_modelJs.state.search);
+};
+const controlServings = function() {
+// Update the Recipe servings (in state)
+// Update the view
 };
 const init = function() {
     (0, _recipeViewJsDefault.default).addHandlerRender(controlRecipe);
@@ -3065,6 +3069,6 @@ class PaginationView extends (0, _viewDefault.default) {
 }
 exports.default = new PaginationView();
 
-},{"./view":"bWlJ9","url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["lqsko","aenu9"], "aenu9", "parcelRequire3a11")
+},{"./view":"bWlJ9","url:../../img/icons.svg":"loVOp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["2kSJi","aenu9"], "aenu9", "parcelRequire3a11")
 
 //# sourceMappingURL=index.e37f48ea.js.map
